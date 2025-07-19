@@ -1,6 +1,6 @@
-package com.leetclub.subject.infra.basic.dao;
+package com.leetclub.subject.infra.basic.mapper;
 
-import com.leetclub.subject.infra.basic.entity.SubjectCategory;
+import com.leetclub.subject.infra.basic.pojo.SubjectCategory;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
@@ -10,7 +10,7 @@ import java.util.List;
  * @author makejava
  * @since 2025-07-17 22:11:14
  */
-public interface SubjectCategoryDao {
+public interface SubjectCategoryMapper {
 
     /**
      * 通过ID查询单条数据

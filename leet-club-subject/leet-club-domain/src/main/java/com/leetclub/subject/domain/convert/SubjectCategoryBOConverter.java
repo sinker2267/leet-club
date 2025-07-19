@@ -2,9 +2,8 @@ package com.leetclub.subject.domain.convert;
 
 import com.leetclub.subject.common.convert.BaseConverter;
 import com.leetclub.subject.domain.entity.SubjectCategoryBO;
-import com.leetclub.subject.infra.basic.entity.SubjectCategory;
+import com.leetclub.subject.infra.basic.pojo.SubjectCategory;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 

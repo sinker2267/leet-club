@@ -1,8 +1,9 @@
-package com.leetclub.subject.infra.basic.entity;
+package com.leetclub.subject.infra.basic.pojo;
 
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
+import java.io.Serial;
 import java.util.Date;
 import java.io.Serializable;
 
@@ -14,7 +15,8 @@ import java.io.Serializable;
  */
 @Data
 public class SubjectCategory implements Serializable {
-    private static final long serialVersionUID = -25506823703496656L;
+    @Serial
+    private static final long serialVersionUID = 1L;
 /**
      * 主键
      */

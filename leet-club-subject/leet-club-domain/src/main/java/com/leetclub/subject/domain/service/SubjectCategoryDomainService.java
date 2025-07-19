@@ -1,7 +1,6 @@
 package com.leetclub.subject.domain.service;
 
 import com.leetclub.subject.domain.entity.SubjectCategoryBO;
-import com.leetclub.subject.infra.basic.entity.SubjectCategory;
 
 import java.util.List;
 

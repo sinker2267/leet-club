@@ -1,6 +1,6 @@
 package com.leetclub.subject.infra.basic.service;
 
-import com.leetclub.subject.infra.basic.entity.SubjectCategory;
+import com.leetclub.subject.infra.basic.pojo.SubjectCategory;
 
 import java.util.List;
 

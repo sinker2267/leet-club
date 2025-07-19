@@ -1,9 +1,8 @@
 package com.leetclub.subject.infra.basic.service.impl;
 
-import com.leetclub.subject.infra.basic.entity.SubjectCategory;
-import com.leetclub.subject.infra.basic.dao.SubjectCategoryDao;
+import com.leetclub.subject.infra.basic.pojo.SubjectCategory;
+import com.leetclub.subject.infra.basic.mapper.SubjectCategoryMapper;
 import com.leetclub.subject.infra.basic.service.SubjectCategoryService;
-import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +18,7 @@ import java.util.List;
 @Service("subjectCategoryService")
 public class SubjectCategoryServiceImpl implements SubjectCategoryService {
     @Autowired
-    private SubjectCategoryDao subjectCategoryDao;
+    private SubjectCategoryMapper subjectCategoryMapper;
 
     /**
      * 通过ID查询单条数据
@@ -29,7 +28,7 @@ public class SubjectCategoryServiceImpl implements SubjectCategoryService {
      */
     @Override
     public SubjectCategory queryById(Long id) {
-        return this.subjectCategoryDao.queryById(id);
+        return this.subjectCategoryMapper.queryById(id);
     }
 
     /**
@@ -48,7 +47,7 @@ public class SubjectCategoryServiceImpl implements SubjectCategoryService {
      */
     @Override
     public SubjectCategory insert(SubjectCategory subjectCategory) {
-        this.subjectCategoryDao.insert(subjectCategory);
+        this.subjectCategoryMapper.insert(subjectCategory);
         return subjectCategory;
     }
 
@@ -60,7 +59,7 @@ public class SubjectCategoryServiceImpl implements SubjectCategoryService {
      */
     @Override
     public int update(SubjectCategory subjectCategory) {
-        return this.subjectCategoryDao.update(subjectCategory);
+        return this.subjectCategoryMapper.update(subjectCategory);
     }
 
     /**
@@ -71,11 +70,11 @@ public class SubjectCategoryServiceImpl implements SubjectCategoryService {
      */
     @Override
     public boolean deleteById(Long id) {
-        return this.subjectCategoryDao.deleteById(id) > 0;
+        return this.subjectCategoryMapper.deleteById(id) > 0;
     }
 
     @Override
     public List<SubjectCategory> queryCategory(SubjectCategory subjectCategory) {
-        return this.subjectCategoryDao.queryCategory(subjectCategory);
+        return this.subjectCategoryMapper.queryCategory(subjectCategory);
     }
 }

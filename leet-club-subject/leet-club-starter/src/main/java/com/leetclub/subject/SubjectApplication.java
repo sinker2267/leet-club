@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 
 @SpringBootApplication
-@MapperScan("com.leetclub.**.dao")
+@MapperScan("com.leetclub.**.mapper")
 public class SubjectApplication {
     public static void main(String[] args) {
         SpringApplication.run(SubjectApplication.class, args);

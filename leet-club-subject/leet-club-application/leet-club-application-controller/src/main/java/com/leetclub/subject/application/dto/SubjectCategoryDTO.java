@@ -3,6 +3,7 @@ package com.leetclub.subject.application.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -13,7 +14,8 @@ import java.io.Serializable;
  */
 @Data
 public class SubjectCategoryDTO implements Serializable {
-    private static final long serialVersionUID = -25506823703496656L;
+    @Serial
+    private static final long serialVersionUID = 1L;
 /**
      * 主键
      */
