@@ -28,9 +28,13 @@ spring:
           enabled: true
         config:
           enabled: true
-#  jackson:
-#    default-property-inclusion: non_null
+  jackson:
+    default-property-inclusion: non_null
 logging:
   config: classpath:log4j-spring.xml
 
 publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANvGhox8HX6Fx740AK6BjNEPApNyFxwpjAuGmhXgNJ725Y+SwJSd8s+1P2YuknrO3IRwrKSUEt4ODFQdPsy0JP0CAwEAAQ==
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
