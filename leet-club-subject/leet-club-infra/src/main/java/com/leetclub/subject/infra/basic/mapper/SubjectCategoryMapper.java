@@ -74,5 +74,7 @@ public interface SubjectCategoryMapper {
      * @return
      */
     List<SubjectCategory> queryCategory(SubjectCategory subjectCategory);
+
+    List<SubjectCategory> queryByIds(@Param("categoryList") List<Long> categoryList);
 }
 

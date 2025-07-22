@@ -10,6 +10,6 @@ import java.util.List;
  * @date 2025/7/19 19:53
  */
 @Data
-public class BatchDeleteSubjectLabel implements BatchRequest<Long> {
+public class BatchDeleteSubjectLabelDTO implements BatchRequest<Long> {
     private List<Long> ids;
 }

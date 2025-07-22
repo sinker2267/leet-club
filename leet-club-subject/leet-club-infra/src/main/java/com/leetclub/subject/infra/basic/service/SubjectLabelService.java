@@ -3,6 +3,8 @@ package com.leetclub.subject.infra.basic.service;
 import com.leetclub.subject.infra.basic.pojo.SubjectLabel;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
 * @author 17864
 * @description 针对表【subject_label(题目标签表)】的数据库操作Service
@@ -10,4 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface SubjectLabelService extends IService<SubjectLabel> {
 
+    List<SubjectLabel> queryByIds(List<Long> labelList);
 }

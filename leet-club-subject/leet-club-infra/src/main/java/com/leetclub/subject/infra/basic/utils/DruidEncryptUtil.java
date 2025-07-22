@@ -38,8 +38,8 @@ public class DruidEncryptUtil {
         return dencrypt;
     }
 
-    public static void main(String[] args) throws Exception {
-        String encrypt = encrypt("wuyifei1211SIN");
-        System.out.println(encrypt);
-    }
+//    public static void main(String[] args) throws Exception {
+//        String encrypt = encrypt("wuyifei1211SIN");
+//        System.out.println(encrypt);
+//    }
 }

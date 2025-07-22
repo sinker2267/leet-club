@@ -3,19 +3,16 @@ package com.leetclub.subject.application.controller;
 import com.alibaba.fastjson2.JSON;
 import com.google.common.base.Preconditions;
 import com.leetclub.subject.application.convert.SubjectLabelDTOConverter;
-import com.leetclub.subject.application.dto.BatchDeleteSubjectLabel;
+import com.leetclub.subject.application.dto.BatchDeleteSubjectLabelDTO;
 import com.leetclub.subject.application.dto.SubjectLabelDTO;
 import com.leetclub.subject.common.entity.Result;
 import com.leetclub.subject.domain.entity.SubjectLabelBO;
 import com.leetclub.subject.domain.service.SubjectLabelDomainService;
-import com.leetclub.subject.infra.basic.pojo.SubjectLabel;
 import io.micrometer.common.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -68,7 +65,7 @@ public class SubjectLabelController {
     }
 
     @PostMapping("batch-delete")
-    public Result<Boolean> batchDelete(@RequestBody BatchDeleteSubjectLabel batchDeleteSubjectLabel) {
+    public Result<Boolean> batchDelete(@RequestBody BatchDeleteSubjectLabelDTO batchDeleteSubjectLabel) {
         try {
             if (log.isInfoEnabled()) {
                 log.info("SubjectLabelController.batchDelete.info:{}", batchDeleteSubjectLabel);

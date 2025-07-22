@@ -48,4 +48,5 @@ public interface SubjectCategoryService {
 
     List<SubjectCategory> queryCategory(SubjectCategory subjectCategory);
 
+    List<SubjectCategory> queryByIds(List<Long> categoryList);
 }

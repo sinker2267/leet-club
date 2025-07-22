@@ -6,6 +6,8 @@ import com.leetclub.subject.infra.basic.service.SubjectLabelService;
 import com.leetclub.subject.infra.basic.mapper.SubjectLabelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
 * @author 17864
 * @description 针对表【subject_label(题目标签表)】的数据库操作Service实现
@@ -15,6 +17,16 @@ import org.springframework.stereotype.Service;
 public class SubjectLabelServiceImpl extends ServiceImpl<SubjectLabelMapper, SubjectLabel>
     implements SubjectLabelService{
 
+    private final SubjectLabelMapper subjectLabelMapper;
+
+    public SubjectLabelServiceImpl(SubjectLabelMapper subjectLabelMapper) {
+        this.subjectLabelMapper = subjectLabelMapper;
+    }
+
+    @Override
+    public List<SubjectLabel> queryByIds(List<Long> labelList) {
+        return subjectLabelMapper.selectByIds(labelList);
+    }
 }
 
 

@@ -28,6 +28,8 @@ spring:
           enabled: true
         config:
           enabled: true
+#  jackson:
+#    default-property-inclusion: non_null
 logging:
   config: classpath:log4j-spring.xml
 
