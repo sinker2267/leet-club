@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leetclub.subject.infra.basic.mapper.SubjectInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.leetclub.subject.infra.basic.pojo.SubjectInfo">
+            <id property="id" column="id" />
+            <result property="subjectName" column="subject_name" />
+            <result property="subjectDifficult" column="subject_difficult" />
+            <result property="settleName" column="settle_name" />
+            <result property="subjectType" column="subject_type" />
+            <result property="subjectScore" column="subject_score" />
+            <result property="subjectParse" column="subject_parse" />
+            <result property="createdBy" column="created_by" />
+            <result property="createdTime" column="created_time" />
+            <result property="updateBy" column="update_by" />
+            <result property="updateTime" column="update_time" />
+            <result property="isDeleted" column="is_deleted" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,subject_name,subject_difficult,settle_name,subject_type,subject_score,
+        subject_parse,created_by,created_time,update_by,update_time,
+        is_deleted
+    </sql>
+    <select id="countByCondition" resultType="java.lang.Integer">
+        select count(1) from subject_info a, subject_mapping b
+        <where>
+            a.id = b.subject_id
+            <if test="subjectInfo.subjectDifficult != null">
+                and a.subject_difficult = #{subjectInfo.subjectDifficult}
+            </if>
+            <if test="categoryId != null">
+                and b.category_id = #{categoryId}
+            </if>
+            <if test="labelId != null">
+                and b.label_id = #{labelId}
+            </if>
+            and a.is_deleted = 0
+            and b.is_deleted = 0
+        </where>
+
+    </select>
+    <select id="queryPage" resultMap="BaseResultMap">
+        select a.id,subject_name,subject_difficult,settle_name,subject_type,subject_score,
+        subject_parse,a.created_by,a.created_time,a.update_by,a.update_time,
+        a.is_deleted
+        from subject_info a, subject_mapping b
+        <where>
+            a.id = b.subject_id
+            <if test="subjectInfo.subjectDifficult != null">
+                and a.subject_difficult = #{subjectInfo.subjectDifficult}
+            </if>
+            <if test="categoryId != null">
+                and b.category_id = #{categoryId}
+            </if>
+            <if test="labelId != null">
+                and b.label_id = #{labelId}
+            </if>
+            and a.is_deleted = 0
+            and b.is_deleted = 0
+        </where>
+        limit #{pageSize} offset #{start}
+    </select>
+</mapper>

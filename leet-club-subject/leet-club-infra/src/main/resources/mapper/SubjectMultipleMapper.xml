@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leetclub.subject.infra.basic.mapper.SubjectMultipleMapper">
+
+    <resultMap id="BaseResultMap" type="com.leetclub.subject.infra.basic.pojo.SubjectMultiple">
+            <id property="id" column="id" />
+            <result property="subjectId" column="subject_id" />
+            <result property="optionType" column="option_type" />
+            <result property="optionContent" column="option_content" />
+            <result property="isCorrect" column="is_correct" />
+            <result property="createdBy" column="created_by" />
+            <result property="createdTime" column="created_time" />
+            <result property="updateBy" column="update_by" />
+            <result property="updateTime" column="update_time" />
+            <result property="isDeleted" column="is_deleted" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,subject_id,option_type,option_content,is_correct,created_by,
+        created_time,update_by,update_time,is_deleted
+    </sql>
+</mapper>
